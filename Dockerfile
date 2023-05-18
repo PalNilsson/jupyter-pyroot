@@ -41,6 +41,8 @@ RUN pip3 install --upgrade jupyterlab "jupyter-server<2.0.0"
 RUN pip3 install --upgrade iminuit pandas sympy terminado urllib3 tables
 RUN pip3 install --upgrade uproot
 
+RUN pip3 install --no-cache-dir "dask[complete]
+
 # Wrap it up.
 RUN dnf clean all
 
