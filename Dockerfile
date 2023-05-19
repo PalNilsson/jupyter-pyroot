@@ -47,4 +47,4 @@ RUN pip3 install --no-cache-dir "dask[complete]"
 RUN dnf clean all
 
 # Run jupyter when this docker container is started.
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8080", "--allow-root"]
+# CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8080", "--allow-root"]
