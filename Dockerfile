@@ -19,7 +19,7 @@ RUN dnf -y update
 
 # Install packages needed for ROOT
 RUN dnf -y install python3 python3-pip  python3-devel which
-RUN dnf -y install root\*  python3-root python3-jupyroot
+RUN dnf -y install root\*  python3-root python3-jupyroot python3-distrdf
 
 # curl will be needed when we install python packages below.
 RUN dnf -y install curl libcurl libcurl-devel --allowerasing
