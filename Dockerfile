@@ -36,7 +36,7 @@ RUN dnf -y install python3-pillow-devel openssl-devel
 # Jupyter installation. 
 RUN pip3 install --upgrade wheel
 RUN pip3 install --upgrade jupyter metakernel
-RUN pip3 install --upgrade numpy scipy matplotlib 
+RUN pip3 install --upgrade numpy scipy matplotlib coffea
 
 # These additional packages are handy, but not critical. 
 RUN pip3 install --upgrade jupyterlab "jupyter-server<2.0.0"
@@ -44,6 +44,7 @@ RUN pip3 install --upgrade iminuit pandas sympy terminado urllib3 tables
 RUN pip3 install --upgrade uproot
 
 RUN pip3 install --no-cache-dir "dask[complete]"
+RUN pip3 install --no-cache-dir dask-awkward dask-histogram
 
 # Wrap it up.
 RUN dnf clean all
