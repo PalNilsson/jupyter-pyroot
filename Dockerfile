@@ -8,6 +8,8 @@
 
 FROM almalinux:9
 
+ENV PANDA_WORKDIR /
+
 WORKDIR /work
 
 # Install packages from AlmaLinux base and EPEL
@@ -45,6 +47,9 @@ RUN pip3 install --no-cache-dir "dask[complete]"
 
 # Wrap it up.
 RUN dnf clean all
+
+# Forward current workdir to user so they can find input files staged in by pilot
+RUN export PANDA_WORKDIR=$PANDA_WORKDIR
 
 # Run jupyter when this docker container is started.
 # CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8080", "--allow-root"]
